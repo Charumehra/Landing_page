@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Global text smoothing + layout */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* for full-width content in small screens */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+}
