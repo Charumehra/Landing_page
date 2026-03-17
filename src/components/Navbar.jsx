@@ -21,15 +21,11 @@ const Navbar = () => {
     "Contact Us",
   ];
 
-  /* Scroll effect */
-
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  /* Close dropdown & search on outside click */
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -42,8 +38,6 @@ const Navbar = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  /* Services */
 
   const services = {
     "Software Products": [
@@ -69,8 +63,6 @@ const Navbar = () => {
       "E-commerce Website Development",
     ],
   };
-
-  /* Technologies */
 
   const technologies = {
     "UI & Frontend": [
@@ -133,7 +125,6 @@ const Navbar = () => {
       }`}
     >
       <div className="px-4 xl:px-8 py-4 flex items-center justify-between">
-
         {/* LOGO */}
 
         <img src={logo} alt="logo" className="h-10 xl:h-12" />
@@ -170,8 +161,6 @@ const Navbar = () => {
                   />
                 )}
 
-                {/* SERVICES DROPDOWN */}
-
                 {link === "Services" && dropdown === "Services" && (
                   <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[90vw] max-w-[700px] bg-white text-black rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-8">
                     {Object.entries(services).map(([title, items]) => (
@@ -193,11 +182,9 @@ const Navbar = () => {
                   </div>
                 )}
 
-                {/* TECHNOLOGIES DROPDOWN */}
-
                 {link === "Technologies" && dropdown === "Technologies" && (
                   <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[90vw] max-w-[700px] bg-white text-black rounded-2xl shadow-xl p-6">
-                    <div className="grid grid-cols-2 gap-8 max-h-[350px] overflow-y-auto">
+                    <div className="grid grid-cols-2 gap-8 max-h-[350px] overflow-y-auto no-scrollbar">
                       {Object.entries(technologies).map(([title, items]) => (
                         <div key={title}>
                           <h4 className="text-purple-600 font-semibold mb-3 border-b pb-1">
@@ -218,8 +205,6 @@ const Navbar = () => {
                   </div>
                 )}
 
-                {/* INDUSTRIES DROPDOWN */}
-
                 {link === "Industries" && dropdown === "Industries" && (
                   <div className="absolute top-12 left-1/2 -translate-x-1/2 w-60 bg-white text-black rounded-xl shadow-lg p-4">
                     {industries.map((item, i) => (
@@ -237,20 +222,13 @@ const Navbar = () => {
           })}
         </ul>
 
-        {/* RIGHT SIDE */}
-
         <div className="hidden xl:flex items-center gap-4 relative">
-
-          {/* SEARCH BUTTON */}
-
           <button
             onClick={() => setSearchOpen(!searchOpen)}
             className="p-2 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition"
           >
             <Search size={20} className="text-white" />
           </button>
-
-          {/* SEARCH INPUT */}
 
           {searchOpen && (
             <div className="absolute right-16 top-12">
@@ -266,24 +244,15 @@ const Navbar = () => {
             </div>
           )}
 
-          {/* ACCOUNT BUTTON */}
-
           <button className="px-5 py-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:scale-105 transition">
             My Account
           </button>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
-
-        <button
-          className="xl:hidden text-white"
-          onClick={() => setOpen(!open)}
-        >
+        <button className="xl:hidden text-white" onClick={() => setOpen(!open)}>
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
-
-      {/* MOBILE MENU */}
 
       {open && (
         <div className="xl:hidden bg-black/90 backdrop-blur-lg rounded-3xl mt-2">

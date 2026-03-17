@@ -1,40 +1,105 @@
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = [
+    {
+      title: "Services",
+      links: ["Online Marketing", "Web Design & Development", "Mobile Application", "Software", "Creative Design", "Consultant", "Data Science", "Testing"],
+    },
+    {
+      title: "Industries",
+      links: ["Automotive", "Ecommerce", "Education", "Finance", "Gaming", "Healthcare", "Manufacturing", "Real Estate", "Retail"],
+    },
+    {
+      title: "Technologies",
+      links: ["UI Design", "Server Side Scripting", "Cloud Computing", "Data Mining and Analytics", "Web Server Technology", "Testing", "Software Process"],
+    },
+    {
+      title: "Products",
+      links: ["CloudSync Pro", "SecureGuard Enterprise", "AI Analytics Suite", "MobileFlow Builder", "DataVault Pro", "DevOps Accelerator", "TeamConnect Hub", "BusinessIntel Dashboard", "WebForce CMS", "AutoFlow Engine"],
+    },
+    {
+      title: "Company",
+      links: ["About Us", "Team", "Culture", "Careers", "Portfolio", "Contact", "Privacy Policy", "Terms of Service"],
+    },
+    {
+      title: "Resources",
+      links: ["Blog", "News", "Documentation", "FAQ", "Technical Support"],
+    },
+  ];
+
   return (
-    <footer className="bg-slate-950 text-slate-300 pt-16 pb-10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <h3 className="text-2xl font-bold text-white">Infocera</h3>
-            <p className="mt-3 text-sm leading-relaxed text-slate-400">Crafting digital transformation journeys for enterprises by building scalable, compliant, and data-driven platforms.</p>
+    <footer className="bg-[#050505] text-white pt-20 pb-10 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+          <div className="lg:col-span-4">
+            <div className="h-12 w-40 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center mb-6">
+               <span className="text-gray-500 text-sm italic">Your Logo Here</span>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+              Leading IT services provider delivering <span className="text-white">innovative technology solutions</span> that drive business growth and digital transformation.
+            </p>
+            
+            {/* Contact Details */}
+            <div className="mt-8 space-y-4">
+              <a href="tel:+918882824948" className="flex items-center gap-3 text-gray-400 hover:text-sky-400 transition-colors text-sm">
+                <Phone size={16} className="text-sky-500" /> +91 8882824948
+              </a>
+              <a href="mailto:info@infocera.in" className="flex items-center gap-3 text-gray-400 hover:text-sky-400 transition-colors text-sm">
+                <Mail size={16} className="text-sky-500" /> info@infocera.in
+              </a>
+              <div className="flex items-start gap-3 text-gray-400 text-sm">
+                <MapPin size={16} className="text-sky-500 mt-1 shrink-0" />
+                <span>First Floor, L29-L34, Block L<br />Connaught Place, New Delhi, Delhi - 110001</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <h4 className="mb-3 font-semibold text-white">Solutions</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li>Cloud Migration</li>
-              <li>Data Engineering</li>
-              <li>App Modernization</li>
-              <li>Security & Compliance</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-3 font-semibold text-white">Company</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li>About</li>
-              <li>Careers</li>
-              <li>Blog</li>
-              <li>Partners</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-3 font-semibold text-white">Contact</h4>
-            <p className="text-sm text-slate-400">contact@infocera.in</p>
-            <p className="mt-2 text-sm text-slate-400">+91 98765 43210</p>
-            <p className="mt-2 text-sm text-slate-400">Bangalore, India</p>
+
+            <div className="lg:col-span-8 flex flex-col justify-end items-start lg:items-end">
+            <div className="flex gap-4">
+              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
+                <a key={i} href="#" className="p-3 bg-white/5 rounded-full border border-white/10 hover:bg-sky-500/10 hover:border-sky-500/50 hover:text-sky-400 transition-all">
+                  <Icon size={20} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} Infocera. All rights reserved.
+        <hr className="border-white/5 mb-16" />
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
+          {footerLinks.map((section) => (
+            <div key={section.title}>
+              <h4 className="text-white font-semibold mb-6 text-sm uppercase tracking-wider">
+                {section.title}
+              </h4>
+              <ul className="space-y-3">
+                {section.links.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="text-gray-500 hover:text-white transition-colors text-sm font-light">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* BOTTOM SECTION: Copyright */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+          <p className="text-gray-600 text-xs">
+            © {currentYear} <span className="text-gray-400">Infocera</span>. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+             <a href="#" className="text-gray-600 hover:text-white text-xs transition-colors">Privacy Policy</a>
+             <a href="#" className="text-gray-600 hover:text-white text-xs transition-colors">Terms of Service</a>
+             <a href="#" className="text-gray-600 hover:text-white text-xs transition-colors">Cookies</a>
+          </div>
         </div>
       </div>
     </footer>

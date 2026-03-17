@@ -1,9 +1,10 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
-// import Trust from "../components/Trust";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
+import Testimonials from "../components/Testimonials";
+import StatsBanner from "../components/StatsBanner";
 
 const Home = () => {
   return (
@@ -17,8 +18,9 @@ const Home = () => {
       {/* Services */}
       <Services />
 
-      {/* Trusted Clients */}
-      {/* <Trust /> */}
+      <Testimonials />
+      
+      <StatsBanner />
 
       {/* Call To Action */}
       <CTA />
