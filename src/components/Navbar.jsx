@@ -125,11 +125,7 @@ const Navbar = () => {
       }`}
     >
       <div className="px-4 xl:px-8 py-4 flex items-center justify-between">
-        {/* LOGO */}
-
         <img src={logo} alt="logo" className="h-10 xl:h-12" />
-
-        {/* DESKTOP MENU */}
 
         <ul className="hidden xl:flex gap-6 text-white font-medium">
           {navLinks.map((link, index) => {

@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,14 +37,13 @@ const Footer = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-4">
-            <div className="h-12 w-40 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center mb-6">
-               <span className="text-gray-500 text-sm italic">Your Logo Here</span>
+            <div className="h-12 w-40  flex items-center justify-center mb-6">
+               <img src={logo} alt="Infocera Logo" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               Leading IT services provider delivering <span className="text-white">innovative technology solutions</span> that drive business growth and digital transformation.
             </p>
             
-            {/* Contact Details */}
             <div className="mt-8 space-y-4">
               <a href="tel:+918882824948" className="flex items-center gap-3 text-gray-400 hover:text-sky-400 transition-colors text-sm">
                 <Phone size={16} className="text-sky-500" /> +91 8882824948
@@ -90,7 +90,6 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* BOTTOM SECTION: Copyright */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-gray-600 text-xs">
             © {currentYear} <span className="text-gray-400">Infocera</span>. All rights reserved.
