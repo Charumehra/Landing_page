@@ -1,34 +1,20 @@
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import CTA from "../components/CTA";
-import Footer from "../components/Footer";
 import Testimonials from "../components/Testimonials";
 import StatsBanner from "../components/StatsBanner";
+import Portfolio from "../components/Portfolio";
 
 const Home = () => {
   return (
-    <div className="bg-white">
-
-      <Navbar />
-
-      {/* Hero Section */}
+    <>
       <Hero />
-
-      {/* Services */}
       <Services />
-
       <Testimonials />
-      
+      <Portfolio />
       <StatsBanner />
-
-      {/* Call To Action */}
       <CTA />
-
-      {/* Footer */}
-      <Footer />
-
-    </div>
+    </>
   );
 };
 

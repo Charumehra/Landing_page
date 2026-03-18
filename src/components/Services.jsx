@@ -100,7 +100,7 @@ const Services = () => {
   }, [index]);
 
   return (
-    <section className="relative bg-[#020202] text-white py-14 md:py-22 overflow-hidden">
+    <section className="relative bg-[#020202] text-white py-8 md:py-16 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-600/10 blur-[150px] rounded-full mix-blend-screen pointer-events-none" />
 
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black,transparent)] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />

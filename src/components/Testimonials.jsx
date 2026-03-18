@@ -42,7 +42,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="relative bg-[#030303] text-white py-14 md:py-22 px-6 overflow-hidden">
+    <section className="relative bg-[#030303] text-white py-8 md:py-18 px-6 overflow-hidden">
       
       <div className="absolute inset-0 opacity-[0.15] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] pointer-events-none">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
@@ -55,11 +55,11 @@ const Testimonials = () => {
         </svg>
       </div>
 
-      <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-blue-600/20 blur-[140px] rounded-full animate-pulse" />
-      <div className="absolute bottom-[0%] right-[-5%] w-[500px] h-[500px] bg-sky-500/10 blur-[120px] rounded-full animate-bounce [animation-duration:10s]" />
+      <div className="absolute top-[15%] left-[-10%] w-[700px] h-[700px] bg-blue-600/10 blur-[180px] rounded-full animate-pulse pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] bg-sky-500/5 blur-[150px] rounded-full animate-bounce [animation-duration:10s] pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+
       <div className="max-w-7xl mx-auto relative z-10">
-        
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="max-w-2xl">
             <span className="inline-block text-sky-400 font-bold tracking-[0.4em] uppercase text-[10px] mb-4">
@@ -81,26 +81,27 @@ const Testimonials = () => {
             </div>
           </div>
         </div>
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((client, idx) => (
             <div 
               key={idx} 
-              className="relative group break-inside-avoid bg-gradient-to-b from-white/[0.08] to-transparent backdrop-blur-xl border border-white/[0.1] p-8 rounded-[2.5rem] hover:border-sky-500/50 transition-all duration-500"
+              className="relative group flex flex-col bg-gradient-to-b from-white/[0.08] to-transparent backdrop-blur-xl border border-white/[0.1] p-8 rounded-[2.5rem] hover:border-sky-500/50 transition-all duration-500 h-full"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-[2.5rem]" />
 
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col h-full">
                 <div className="flex gap-1 mb-6 text-sky-400/80">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={14} fill="currentColor" />
                   ))}
                 </div>
 
-                <p className="text-gray-300 leading-relaxed mb-10 text-lg font-light tracking-wide italic">
+                <p className="text-gray-300 leading-relaxed mb-10 text-lg font-light tracking-wide italic flex-grow">
                   "{client.content}"
                 </p>
                 
-                <div className="flex items-center gap-4 pt-6 border-t border-white/10">
+                <div className="flex items-center gap-4 pt-6 border-t border-white/10 mt-auto">
                   <div className="relative shrink-0">
                     <img 
                       src={client.image} 

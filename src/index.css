@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Global text smoothing + layout */
 html, body, #root {
   height: 100%;
 }
@@ -13,14 +12,12 @@ body {
 * {
   box-sizing: border-box;
 }
-
-/* for full-width content in small screens */
 @layer base {
   :root {
     color-scheme: light;
   }
 }
-/* Hide scrollbar */
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
