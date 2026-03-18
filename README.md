@@ -20,5 +20,5 @@ Infocera IT Landing Page is a modern, responsive marketing website prototype bui
 
 ## Screenshot
 
-![Homepage Screenshot](./assets/homepage.png)
+![Homepage Screenshot](src/assets/homepage.png)
 
